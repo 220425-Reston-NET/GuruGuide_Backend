@@ -12,25 +12,7 @@ namespace GuruGuideModles
         public string PhoneNumber {get; set;}
         public string Gender {get; set;}
         public string Ethnicity {get; set; }
-        private int _Age;
-
-         public int Age
-        {
-            get { return _Age;}
-            set
-            {
-                if (value > 0)
-                {
-                    _Age = value;
-                }
-                else
-                {
-                    throw new ValidationException("Customers Age needs to be above 0.");
-                }
-            }
-        }
-    
-
+         public int Age {get; set;}
         public string Username {get; set; }
         public string Password {get; set; }
 
