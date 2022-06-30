@@ -12,8 +12,8 @@ namespace GuruGuideModles
         public string CState {get; set; }
         public string CGender {get; set;}
         public string CRace {get; set;}
-        public string Age {get; set;}
-        public string YearsOfExperience {get; set;}
+        public int Age {get; set;}
+        public int YearsOfExperience {get; set;}
         public string Pricing {get; set;}
         public string Qualiifications {get; set;}
         public string Languages {get; set;}
@@ -31,8 +31,8 @@ namespace GuruGuideModles
             CState = "default";
             CGender =  "default";
             CRace = "default";
-            Age = "21";
-            YearsOfExperience = "default";
+            Age = 0;
+            YearsOfExperience = 0;
             Pricing =  "default";
             Qualiifications = "default";
             Languages = "default";
