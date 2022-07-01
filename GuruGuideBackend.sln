@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuruGuideModles", "GuruGuideModles\GuruGuideModles.csproj", "{56CB34BC-E5FD-4CC3-A89B-93BEBD675AB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuruGuideModels", "GuruGuideModels\GuruGuideModels.csproj", "{56CB34BC-E5FD-4CC3-A89B-93BEBD675AB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuruGuideDL", "GuruGuideDL\GuruGuideDL.csproj", "{987EBC47-839A-43B7-942C-E86E43DCA620}"
 EndProject
