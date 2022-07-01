@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GuruGuideBL\GuruGuideBL.csproj" />
+    <ProjectReference Include="..\GuruGuideModles\GuruGuideModles.csproj" />
   </ItemGroup>
 
 </Project>
