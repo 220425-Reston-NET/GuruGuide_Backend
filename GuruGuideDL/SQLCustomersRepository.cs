@@ -1,3 +1,4 @@
+using System.Data.SqlClient;
 using GuruGuideModles;
 
 namespace GuruGuideDL
@@ -19,10 +20,11 @@ namespace GuruGuideDL
 
                 SqlCommand command = new SqlCommand(SQLQuary, con);
 
-                command.Parameters.AddWithValue("@custName", c_resource.Name);
-                command.Parameters.AddWithValue("@custEmail", c_resource.Email);
-                command.Parameters.AddWithValue("@custAddress", c_resource.Address);
-                command.Parameters.AddWithValue("@custPhonenumber", c_resource.Phonenumber);
+                command.Parameters.AddWithValue("@CustUserName", g_resource.UserName);
+                command.Parameters.AddWithValue("@CustEmail", g_resource.Email);
+                command.Parameters.AddWithValue("@CustFirstName", g_resource.FirstName);
+                command.Parameters.AddWithValue("@CustLastName", g_resource.LastName);
+                command.Parameters.AddWithValue("@CustPassword", g_resource.Password);
 
                 command.ExecuteNonQuery();
             }
@@ -30,7 +32,33 @@ namespace GuruGuideDL
 
         public List<Customers> GetAll()
         {
-            throw new NotImplementedException();
+            string SQLQuary = @"select * from Customers";
+
+            List<Customers> listOfCustomers = new List<Customers>();
+
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                con.Open();
+
+                SqlCommand command = new SqlCommand(SQLQuary, con);
+
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    listOfCustomers.Add(new Customers(){
+                        
+                        UserName = reader.GetString(1),
+                        Email = reader.GetString(2),
+                        FirstName = reader.GetString(3),
+                        LastName = reader.GetString(4),
+                        Password = reader.GetString(5)
+                    });
+                }
+
+                return listOfCustomers;
+            }
         }
 
         public void Update(Customers g_resource)

@@ -5,9 +5,7 @@
     <ProjectReference Include="..\GuruGuideDL\GuruGuideDL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
-  </ItemGroup>
+  
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>

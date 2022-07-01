@@ -4,6 +4,10 @@
     <ProjectReference Include="..\GuruGuideModles\GuruGuideModles.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.1.0" />
+  </ItemGroup>
+
    
 
   <PropertyGroup>
