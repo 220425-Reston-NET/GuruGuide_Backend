@@ -5,7 +5,7 @@ namespace GuruGuideModles
     public class Appointments
     {
         public int appID { get; set; }
-        public string CustName { get; set; }
+        public string CustFullName { get; set; }
         public long CustNumber { get; set; }
         public DateTime DateTime { get; set; }
         public string ServiceName { get; set; }
@@ -16,7 +16,7 @@ namespace GuruGuideModles
         public Appointments()
         {
             appID = 0;
-            CustName = "Default";
+            CustFullName = "Default";
             CustNumber = 9999999999;
             ServiceName = "Default";
         }
