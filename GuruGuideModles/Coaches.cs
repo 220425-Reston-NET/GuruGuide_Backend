@@ -16,7 +16,7 @@ namespace GuruGuideModles
         public string CRace {get; set;}
         public int Age {get; set;}
         public int YearsOfExperience {get; set;}
-        public int Pricing {get; set;}
+        public Decimal Pricing {get; set;}
         public string Qualifications {get; set;}
         public string Languages {get; set;}
         public string ModalityOptions {get; set;}

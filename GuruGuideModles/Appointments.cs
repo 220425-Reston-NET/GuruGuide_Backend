@@ -1,24 +1,32 @@
 ﻿using System;
 
-namespace GuruGuideModles
+namespace GuruGuideModels
 {
     public class Appointments
     {
-        public int appID { get; set; }
-        public string CustFullName { get; set; }
-        public long CustNumber { get; set; }
-        public DateTime DateTime { get; set; }
-        public string ServiceName { get; set; }
+        public int AppointmentID { get; set; }
+        public string AppointmentType { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public long PhoneNumber { get; set; }
+        public DateTime Datetime { get; set; }
 
-        DateTime dt = new DateTime(2018, 7, 23, 08, 20, 10);
         
+
+        public Appointments(int DateTime)
+        {
+            AppointmentID = 0;
+            AppointmentType = "Default";
+            FirstName = "Default";
+            LastName = "Default";
+            Email = "Default";
+            PhoneNumber = 5678765458;
+        }
 
         public Appointments()
         {
-            appID = 0;
-            CustFullName = "Default";
-            CustNumber = 9999999999;
-            ServiceName = "Default";
+            this.Datetime = new DateTime ();
         }
     }
 }
