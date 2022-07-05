@@ -29,19 +29,19 @@ namespace GuruGuideModles
             CUserName = "default";
             CEmail = "default";
             CPassword = "default";
-            AreaOfSpecialization = "default";
-            BusinessPhoneNumber = 0;
             CAddress = "default";
             CCity = "default";
             CState = "default";
+            AreaOfSpecialization = "default";
+            BusinessPhoneNumber = 3321312;
             CGender =  "default";
             CRace = "default";
             Age = 0;
             YearsOfExperience = 0;
-            Pricing =  0;
             Qualifications = "default";
             Languages = "default";
             ModalityOptions = "default";
+            Pricing =  0;
         }
 
     }
