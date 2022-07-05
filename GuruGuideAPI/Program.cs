@@ -1,8 +1,16 @@
+using GuruCoaches.GuruModels.GuruContext;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+string connectionString = builder.Configuration.GetConnectionString("Guru");
+builder.Services.AddDbContext<GuruContext>(option  => 
+    option.UseSqlServer(connectionString)
+);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
