@@ -5,6 +5,17 @@ using GuruGuideModles;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Adding CORS
+builder.Services.AddCors(
+    (options) => {
+        options.AddDefaultPolicy(origin => {
+            origin.AllowAnyOrigin();
+            origin.AllowAnyMethod();
+            origin.AllowAnyHeader();
+        });
+    }
+);
+
 // Add services to the container.
 
 builder.Services.AddControllers();

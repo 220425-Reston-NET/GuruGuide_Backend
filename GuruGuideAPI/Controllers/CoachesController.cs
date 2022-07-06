@@ -18,7 +18,6 @@ namespace GuruGuideAPI.Controllers
             _coachesBL = c_coachesBL;
            
         }
-
         //================================================
 
         //Data annotation to indicate what type of HTTP verb it is

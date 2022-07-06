@@ -8,7 +8,7 @@ namespace GuruGuideModles
         public string CEmail { get; set;}
         public string CPassword { get; set; }
         public string AreaOfSpecialization {get; set;}
-        public int BusinessPhoneNumber {get; set;}
+        public long? BusinessPhoneNumber {get; set;}
         public string CAddress { get; set; }
         public string CCity {get; set;}
         public string CState {get; set; }
@@ -43,6 +43,5 @@ namespace GuruGuideModles
             ModalityOptions = "default";
             Pricing =  0;
         }
-
     }
 }

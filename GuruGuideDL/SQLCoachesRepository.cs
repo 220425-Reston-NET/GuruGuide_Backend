@@ -17,7 +17,7 @@ namespace GuruGuideDL
         {
             string SQLQuary = @"insert into Coaches
                                values (@CTitle, @CFullName, @CUserName, @CEmail, @CPassword, @CAddress, @CCity, @CState, @AreaOfSpecialization,
-                                    @BusinessPhoneNumber, @CGender, @CRace, @Age, @YearsOfExperience, @Qualifications, @Languages, @ModalityOptions, @Pricing)";
+                                     @CGender, @CRace, @Age, @YearsOfExperience, @Qualifications, @Languages, @ModalityOptions, @Pricing, @BusinessPhoneNumber)";
 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -35,7 +35,6 @@ namespace GuruGuideDL
                 command.Parameters.AddWithValue("@CCity", c_resource.CCity);
                 command.Parameters.AddWithValue("@CState", c_resource.CState);
                 command.Parameters.AddWithValue("@AreaOfSpecialization", c_resource.AreaOfSpecialization);
-                command.Parameters.AddWithValue("@BusinessPhoneNumber", c_resource.BusinessPhoneNumber);
                 command.Parameters.AddWithValue("@CGender", c_resource.CGender);
                 command.Parameters.AddWithValue("@CRace", c_resource.CRace);
                 command.Parameters.AddWithValue("@Age", c_resource.Age);
@@ -44,6 +43,8 @@ namespace GuruGuideDL
                 command.Parameters.AddWithValue("@Languages", c_resource.Languages);
                 command.Parameters.AddWithValue("@ModalityOptions", c_resource.ModalityOptions);
                 command.Parameters.AddWithValue("@Pricing", c_resource.Pricing);
+                command.Parameters.AddWithValue("@BusinessPhoneNumber", c_resource.BusinessPhoneNumber);
+
                 command.ExecuteNonQuery();
             }
         }
@@ -60,12 +61,12 @@ namespace GuruGuideDL
 
                 SqlCommand command = new SqlCommand(SQLQuary, con);
 
-
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
                     listOfCoaches.Add(new Coaches(){
+                        
                         CTitle = reader.GetString(1),
                         CFullName = reader.GetString(2),
                         CUserName = reader.GetString(3),
@@ -75,15 +76,15 @@ namespace GuruGuideDL
                         CCity = reader.GetString(7),
                         CState = reader.GetString(8),
                         AreaOfSpecialization = reader.GetString(9),
-                        BusinessPhoneNumber = reader.GetInt32(10),
-                        CGender = reader.GetString(11),
-                        CRace = reader.GetString(12),
-                        Age = reader.GetInt32(13),
-                        YearsOfExperience = reader.GetInt32(14),
-                        Qualifications = reader.GetString(15),
-                        Languages = reader.GetString(16),
-                        ModalityOptions = reader.GetString(17),
-                        Pricing = reader.GetDecimal(18)
+                        CGender = reader.GetString(10),
+                        CRace = reader.GetString(11),
+                        Age = reader.GetInt32(12),
+                        YearsOfExperience = reader.GetInt32(13),
+                        Qualifications = reader.GetString(14),
+                        Languages = reader.GetString(15),
+                        ModalityOptions = reader.GetString(16),
+                        Pricing = reader.GetDecimal(17),
+                        BusinessPhoneNumber = reader.GetInt64(18),
                     });
                 }
                 return listOfCoaches;

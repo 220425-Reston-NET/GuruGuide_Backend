@@ -15,8 +15,5 @@ namespace GuruGuideBL
         Coaches SearchCoachesByAddress(string c_CoachesAddress);
 
         List<Coaches> GetCoaches();
-
-
-
     }
 }
