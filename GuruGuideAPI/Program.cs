@@ -23,14 +23,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IRepository<Appointments>, SQLAppointmentsRepository>(repo => new SQLAppointmentsRepository(builder.Configuration.GetConnectionString("Maaz Umer Store")));
+builder.Services.AddScoped<IRepository<Appointments>, SQLAppointmentsRepository>(repo => new SQLAppointmentsRepository(Environment.GetEnvironmentVariable("Connection_String")));
 builder.Services.AddScoped<IAppointmentsBL, AppointmentsBL>();
-builder.Services.AddScoped<IRepository<Customers>, SQLCustomersRepository>(repo => new SQLCustomersRepository(builder.Configuration.GetConnectionString("Maaz Umer Store")));
+builder.Services.AddScoped<IRepository<Customers>, SQLCustomersRepository>(repo => new SQLCustomersRepository(Environment.GetEnvironmentVariable("Connection_String")));
 builder.Services.AddScoped<ICustomersBL, CustomersBL>();
-builder.Services.AddScoped<IRepository<Coaches>, SQLCoachesRepository>(repo => new SQLCoachesRepository(builder.Configuration.GetConnectionString("Maaz Umer Store")));
+builder.Services.AddScoped<IRepository<Coaches>, SQLCoachesRepository>(repo => new SQLCoachesRepository(Environment.GetEnvironmentVariable("Connection_String")));
 builder.Services.AddScoped<ICoachesBL, CoachesBL>();
 // builder.Services.AddScoped<IRepository<Store>, SQLStoreRepository>(repo => new SQLStoreRepository(builder.Configuration.GetConnectionString("Maaz Umer Store")));
 // builder.Services.AddScoped<IStoreBL, StoreBL>();
+
+//builder.Services.AddScoped<IRepository<???????>>(repo => new ??????Repo(Environment.GetEnvironmentVariable("Connection_String"))); Environment 
 
 var app = builder.Build();
 
