@@ -55,11 +55,11 @@ namespace GuruGuideAPI.Controllers
         }
 
         [HttpGet("SearchCoachesByName")]
-        public IActionResult SearchCoaches([FromQuery] string custName, string custPassword)
+        public IActionResult SearchCoaches([FromQuery] string CUserName, string CPassword)
         {
             try
             {
-                return Ok(_coachesBL.SearchCoachesByUserName(custName, custPassword));
+                return Ok(_coachesBL.SearchCoachesByUserName(CUserName, CPassword));
             }
             catch (SqlException)
             {
