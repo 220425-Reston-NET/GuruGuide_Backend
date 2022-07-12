@@ -59,13 +59,13 @@ namespace GuruGuideBL
                 return null;
         }
 
-        public Coaches SearchCoachesByState(string c_CoachesCState)
+        public Coaches SearchCoachesByState(string c_CoachesState)
         {
               List<Coaches> currentListOfCoaches = _CoachesRepo.GetAll();
            
            foreach (Coaches custobj in currentListOfCoaches)
            {
-               if (custobj.CState == c_CoachesCState)
+               if (custobj.CState == c_CoachesState)
                {
                    return custobj;
                }

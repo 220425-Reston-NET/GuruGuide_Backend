@@ -13,7 +13,7 @@ namespace GuruGuideBL
 
         Coaches SearchCoachesByUserName(string c_CoachesUserName, string c_password);
         Coaches SearchCoachesByAddress(string c_CoachesCAddress);
-        Coaches SearchCoachesByState(string c_CoachesCState);
+        Coaches SearchCoachesByState(string c_CoachesState);
         Coaches SearchCoachesBySpecialization(string c_CoachesAreaOfSpecialization);
 
         List<Coaches> GetCoaches();
