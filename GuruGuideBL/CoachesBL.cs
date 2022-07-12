@@ -29,13 +29,13 @@ namespace GuruGuideBL
             return _CoachesRepo.GetAll();
         }
 
-        public Coaches SearchCoachesByAddress(string c_CoachesAddress)
+        public Coaches SearchCoachesByAddress(string c_CoachesCAddress)
         {
             List<Coaches> currentListOfCoaches = _CoachesRepo.GetAll();
            
            foreach (Coaches custobj in currentListOfCoaches)
            {
-               if (custobj.CAddress == c_CoachesAddress)
+               if (custobj.CAddress == c_CoachesCAddress)
                {
                    return custobj;
                }
@@ -44,13 +44,13 @@ namespace GuruGuideBL
                 return null;
         }
 
-        public Coaches SearchCoachesBySpecialization(string c_Coaches)
+        public Coaches SearchCoachesBySpecialization(string c_CoachesAreaOfSpecialization)
         {
            List<Coaches> currentListOfCoaches = _CoachesRepo.GetAll();
            
            foreach (Coaches custobj in currentListOfCoaches)
            {
-               if (custobj.AreaOfSpecialization == c_Coaches)
+               if (custobj.AreaOfSpecialization == c_CoachesAreaOfSpecialization)
                {
                    return custobj;
                }

@@ -74,7 +74,7 @@ namespace GuruGuideAPI.Controllers
             {
                 return Ok(_coachesBL.SearchCoachesByState(CState));
             }
-            catch (System.Exception)
+            catch (SqlException)
             {
                 
                 return Conflict();
@@ -88,7 +88,7 @@ namespace GuruGuideAPI.Controllers
             {
                 return Ok(_coachesBL.SearchCoachesBySpecialization(AreaOfSpecialization));
             }
-            catch (System.Exception)
+            catch (SqlException)
             {
                 
                 return Conflict();
