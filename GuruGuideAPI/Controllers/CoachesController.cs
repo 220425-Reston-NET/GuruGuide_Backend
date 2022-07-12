@@ -55,7 +55,7 @@ namespace GuruGuideAPI.Controllers
         }
 
         [HttpGet("SearchCoachesByName")]
-        public IActionResult SearchCoaches([FromQuery] string CUserName, string CPassword)
+        public IActionResult SearchCoachesByName([FromQuery] string CUserName, string CPassword)
         {
             try
             {
@@ -63,6 +63,34 @@ namespace GuruGuideAPI.Controllers
             }
             catch (SqlException)
             {
+                return Conflict();
+            }
+        }
+
+        [HttpGet("SearchCoachesByState")]
+        public IActionResult SearchCoachesByState([FromQuery] string CState)
+        {
+            try
+            {
+                return Ok(_coachesBL.SearchCoachesByState(CState));
+            }
+            catch (System.Exception)
+            {
+                
+                return Conflict();
+            }
+        }
+
+           [HttpGet("SearchCoachesByAreaOfSpecialization")]
+        public IActionResult SearchCoachesBySpecialization([FromQuery] string AreaOfSpecialization)
+        {
+            try
+            {
+                return Ok(_coachesBL.SearchCoachesBySpecialization(AreaOfSpecialization));
+            }
+            catch (System.Exception)
+            {
+                
                 return Conflict();
             }
         }

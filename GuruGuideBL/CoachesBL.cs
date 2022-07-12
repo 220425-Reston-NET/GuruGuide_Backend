@@ -44,6 +44,36 @@ namespace GuruGuideBL
                 return null;
         }
 
+        public Coaches SearchCoachesBySpecialization(string c_Coaches)
+        {
+           List<Coaches> currentListOfCoaches = _CoachesRepo.GetAll();
+           
+           foreach (Coaches custobj in currentListOfCoaches)
+           {
+               if (custobj.AreaOfSpecialization == c_Coaches)
+               {
+                   return custobj;
+               }
+           }
+           
+                return null;
+        }
+
+        public Coaches SearchCoachesByState(string c_CoachesCState)
+        {
+              List<Coaches> currentListOfCoaches = _CoachesRepo.GetAll();
+           
+           foreach (Coaches custobj in currentListOfCoaches)
+           {
+               if (custobj.CState == c_CoachesCState)
+               {
+                   return custobj;
+               }
+           }
+           
+                return null;
+        }
+
         public Coaches SearchCoachesByUserName(string c_CoachesUserName, string c_password)
         {
            List<Coaches> currentListOfCoaches = _CoachesRepo.GetAll();
