@@ -32,7 +32,7 @@ builder.Services.AddScoped<ICoachesBL, CoachesBL>();
 // builder.Services.AddScoped<IRepository<Store>, SQLStoreRepository>(repo => new SQLStoreRepository(builder.Configuration.GetConnectionString("Maaz Umer Store")));
 // builder.Services.AddScoped<IStoreBL, StoreBL>();
 
-//builder.Services.AddScoped<IRepository<???????>>(repo => new ??????Repo(Environment.GetEnvironmentVariable("Connection_String"))); Environment 
+//builder.Services.AddScoped<IRepository<???????>>(repo => new ??????Repo(Environment.GetEnvironmentVariable("Connection_String"))); Environment///////
 
 var app = builder.Build();
 
